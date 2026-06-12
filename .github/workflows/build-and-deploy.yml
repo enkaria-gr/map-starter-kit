@@ -13,7 +13,7 @@ permissions:
 
 jobs:
   build-and-deploy:
-    runs-on: ${{ vars.RUNNER || 'ubuntu-latest' }}
+    runs-on: ${{ vars.RUNNER == 'self-hosted' && 'self-hosted' || 'ubuntu-latest' }}
 
     steps:
       - name: Checkout Repository
